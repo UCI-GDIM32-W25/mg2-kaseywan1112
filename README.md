@@ -1,7 +1,13 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/7qg5CCgx)
 # HW2
 ## Devlog
-Write your Devlog here!
+Yaokun Wan, He/him
+
+In my MG2 break-down activity, I planned a simple game where the player jumps to collect coins, gains points, and the UI updates. My final implementation is very similar to my original plan. 
+
+The player jump mechanic is implemented in the Player class using the Update() method and OnCollisionEnter2D() to check if the player is grounded. Coins are generated at irregular intervals in the CoinSpawn.Update() method using Random.Range() and Instantiate(). When the player hits a coin, OnTriggerEnter2D() destroys the coin and calls Gamecontroller.AddScore(1) to increase the score. The UI text is updated in Gamecontroller.UpdateScoreUI() using a TMP_Text object. 
+
+Overall, my code follows my original design closely, so no major changes were needed during implementation.
 
 
 ## Open-Source Assets
