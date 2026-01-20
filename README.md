@@ -5,7 +5,9 @@ Yaokun Wan, He/him
 
 In my MG2 break-down activity, I planned a simple game where the player jumps to collect coins, gains points, and the UI updates. My final implementation is very similar to my original plan. 
 
-The player jump mechanic is implemented in the Player class using the Update() method and OnCollisionEnter2D() to check if the player is grounded. Coins are generated at irregular intervals in the CoinSpawn.Update() method using Random.Range() and Instantiate(). When the player hits a coin, OnTriggerEnter2D() destroys the coin and calls Gamecontroller.AddScore(1) to increase the score. The UI text is updated in Gamecontroller.UpdateScoreUI() using a TMP_Text object. 
+The player jump mechanic is implemented in the Player class using the Update() method and OnCollisionEnter2D() to check if the player is grounded. This ensures that the player cannot jump while in the air, which matches my original plan. Coins are generated at irregular intervals in the CoinSpawn.Update() method using Random.Range() and Instantiate(), so the game can continue infinitely and the timing of coins is not perfectly regular. This connects directly to the “create coin” and “Coin” parts of my break-down diagram.
+
+When the player hits a coin, OnTriggerEnter2D() detects the collision, destroys the coin, and calls Gamecontroller.AddScore(1) to increase the score. The UI text is then updated in Gamecontroller.UpdateScoreUI() using a TMP_Text object on the Canvas. This follows my original design where collision detection, points, and UI display are connected, and it allows the player to see their score update in real time.
 
 Overall, my code follows my original design closely, so no major changes were needed during implementation.
 
